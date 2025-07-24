@@ -46,8 +46,12 @@ canvas {
     @apply h-[calc(100vh-60px)];
 }
 
-@utility btn {
-    @apply px-5 py-2 rounded-3xl bg-primary my-5 hover:bg-transparent border border-transparent hover:border hover:text-primary hover:border-primary;
+/* -------------- 패딩 적용이 안될 경우, @utility 사용하지 말고 직접 sass 방식으로 적용함  -------------- */
+.btn {
+    @apply px-5 py-2 rounded-3xl bg-primary my-5 border border-transparent;
+    &:hover {
+        @apply bg-transparent border-primary text-primary;
+    }
 }
 
 @utility color-container {

@@ -17,6 +17,12 @@ const Hero = () => {
                 opacity: 1, // 보이기
                 delay: 1.5, // 1.5초 후 애님 시작
             });
+            // buy 버튼 애니메이션
+            gsap.to('#cta', {
+                opacity: 1, // 보이기
+                y: -50, //  위로 50px 이동
+                delay: 1.5, // 1.5초 후 애님 시작
+            });
         }
     }, [videoSrc]);
 
