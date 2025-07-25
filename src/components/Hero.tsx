@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const Hero = () => {
     //  비디오 소스를 상태변수로 설정
-    const [videoSrc, setVideoSrc] = useState<string | null>(null); // 초기값으로 smallHeroVideo 설정
+    const [videoSrc, setVideoSrc] = useState<string | null>(null); // 초기값으로 null 설정
 
     // GSAP 애니메이션을 위한 use Hook
     useGSAP(() => {
@@ -15,13 +15,13 @@ const Hero = () => {
             // 타이틀 애니메이션
             gsap.to('#hero', {
                 opacity: 1, // 보이기
-                delay: 1.5, // 1.5초 후 애님 시작
+                delay: 2, // 1.5초 후 애님 시작
             });
             // buy 버튼 애니메이션
             gsap.to('#cta', {
                 opacity: 1, // 보이기
                 y: -50, //  위로 50px 이동
-                delay: 1.5, // 1.5초 후 애님 시작
+                delay: 2, // 1.5초 후 애님 시작
             });
         }
     }, [videoSrc]);

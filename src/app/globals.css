@@ -10,11 +10,16 @@
     --color-zinc: #101010;
 }
 
-/* ************************************** 이 아래에 붙여 넣는다.  */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ******************************************************************************************* */
+/* !!!!!중요: tailwindcss 4 버전은 * 스타일을 반드시 @layer base 내부에 설정해야함  !!!!!!!!!! */
+/* !!!!!중요: 그래야 padding, margin, spacing 등의 여백이 잘 적용됨   !!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* ******************************************************************************************* */
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 }
 
 body {
@@ -66,7 +71,7 @@ canvas {
     @apply w-10 h-10 text-sm flex justify-center items-center bg-white text-black rounded-full transition-all;
 }
 
-@utility common-padding {
+.common-padding {
     @apply sm:py-32 py-20 sm:px-10 px-5;
 }
 
