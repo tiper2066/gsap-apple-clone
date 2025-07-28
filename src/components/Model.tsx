@@ -1,12 +1,12 @@
 'use client';
 
-import { useRef, useState } from 'react'; // ********************* useEffect 추가
-import ModelView from './ModelView';
+import { useRef, useState } from 'react';
 import { yellowImg } from '@/utils'; //  모델 이미지(노랑)
 import * as THREE from 'three'; //  three.js
 import { Canvas } from '@react-three/fiber'; //  3d canvas
 import { View } from '@react-three/drei'; //  3d view
 import { models, sizes } from '@/constants'; //  모델 및 Size 정보 데이터 가져오기
+import ModelView from './ModelView';
 
 const Model = () => {
     const [size, setSize] = useState('small'); //  사이즈 설정 상태변수
@@ -28,7 +28,7 @@ const Model = () => {
     const [smallRotation, setSmallRotation] = useState(0); // 작은 모델 회전각
     const [largeRotation, setLargeRotation] = useState(0); //  큰 모델 회전각
 
-    const canvasWrapperRef = useRef<HTMLDivElement | null>(null); //  3d 모델을 표시할 캔바스 참조
+    const canvasWrapperRef = useRef<HTMLDivElement>(null!); //  3d 모델을 표시할 캔바스 참조
 
     return (
         <section className='common-padding'>
